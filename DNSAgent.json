@@ -1,0 +1,25 @@
+{
+	"HideOnStart" : false,
+	"ListenOn" : "127.0.0.1:53",
+	"DefaultNameServer" : "114.114.114.114:53",
+	"QueryTimeout" : 4000,
+	"CompressionMutation" : false,
+	"CacheResponse" : true,
+	"CacheAge" : 0,
+	"NetworkWhitelist" : null,
+	"Rules" : [{
+			"Pattern" : "^(.*\\.googlevideo\\.com)|((.*\\.)?(youtube|ytimg)\\.com)$",
+			"Address" : "203.66.168.119"
+		}, {
+			"Pattern" : "^.*(service|node)\\.consul$",
+			"NameServer" : "127.0.0.1:8600",
+			"QueryTimeout" : 1000,
+			"CompressionMutation" : false
+		}, {
+			"Pattern" : "^.*\\.cn$",
+			"NameServer" : "114.114.114.114:53",
+			"QueryTimeout" : 1000,
+			"CompressionMutation" : false
+		}
+	]
+}

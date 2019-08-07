@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1D0C543-EF1E-419D-A851-328E3210AE39}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DNSAgent</RootNamespace>
+    <AssemblyName>DNSAgent</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>MrTe_75ddcd63dc8c6285.snk</AssemblyOriginatorKeyFile>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <StartupObject>DNSAgent.Program</StartupObject>
+    <ApplicationIcon>DNSAgent.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\Net\BaseEncoding.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsClientAsyncState.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsClient.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsClientBase.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsClientEndpointInfo.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsClientParallelAsyncState.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsClientParallelState.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsMessage.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsMessageBase.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsMessageEntryBase.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsQuestion.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\AaaaRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\AfsdbRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\AplRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\ARecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\CAARecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\CertRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\CNameRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\DhcidRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\DNameRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\DnsRecordBase.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\Eui48Record.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\Eui64Record.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\GPosRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\HInfoRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\IAddressRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\IpSecKeyRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\IsdnRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\HipRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\ITextRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\L32Record.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\L64Record.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\LocRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\KxRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\LPRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\MxRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\NaptrRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\NIdRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\NsapRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\NsRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\PxRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\RpRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\RtRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\SshFpRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\TKeyRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\TlsaRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\WksRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\X25Record.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\DiffieHellmanKeyRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\DlvRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\DnsKeyRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\DnsSecAlgorithm.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\DnsSecDigestType.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\DsRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\KeyRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\KeyRecordBase.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\NSec3ParamRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\Nsec3Record.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\NSecRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\RrSigRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DynamicUpdate\AddRecordUpdate.cs" />
+    <Compile Include="App_Code\Net\Dns\DynamicUpdate\DeleteAllRecordsUpdate.cs" />
+    <Compile Include="App_Code\Net\Dns\DynamicUpdate\DeleteRecordUpdate.cs" />
+    <Compile Include="App_Code\Net\Dns\DynamicUpdate\DnsUpdateMessage.cs" />
+    <Compile Include="App_Code\Net\Dns\DynamicUpdate\NameIsInUsePrequisite.cs" />
+    <Compile Include="App_Code\Net\Dns\DynamicUpdate\NameIsNotInUsePrequisite.cs" />
+    <Compile Include="App_Code\Net\Dns\DynamicUpdate\PrequisiteBase.cs" />
+    <Compile Include="App_Code\Net\Dns\DynamicUpdate\RecordExistsPrequisite.cs" />
+    <Compile Include="App_Code\Net\Dns\DynamicUpdate\RecordNotExistsPrequisite.cs" />
+    <Compile Include="App_Code\Net\Dns\DynamicUpdate\UpdateBase.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsSec\SigRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\EDns\ClientSubnetOption.cs" />
+    <Compile Include="App_Code\Net\Dns\EDns\DnssecAlgorithmUnderstoodOption.cs" />
+    <Compile Include="App_Code\Net\Dns\EDns\DsHashUnderstoodOption.cs" />
+    <Compile Include="App_Code\Net\Dns\EDns\LongLivedQueryOption.cs" />
+    <Compile Include="App_Code\Net\Dns\EDns\Nsec3HashUnderstoodOption.cs" />
+    <Compile Include="App_Code\Net\Dns\EDns\OwnerOption.cs" />
+    <Compile Include="App_Code\Net\Dns\EDns\UpdateLeaseOption.cs" />
+    <Compile Include="App_Code\Net\Dns\LlmnrClient.cs" />
+    <Compile Include="App_Code\Net\Dns\LlmnrMessage.cs" />
+    <Compile Include="App_Code\Net\Dns\MulticastDnsOneShotClient.cs" />
+    <Compile Include="App_Code\Net\Dns\MulticastDnsMessage.cs" />
+    <Compile Include="App_Code\Net\Dns\TSig\TSigAlgorithm.cs" />
+    <Compile Include="App_Code\Net\Dns\TSig\TSigAlgorithmHelper.cs" />
+    <Compile Include="App_Code\Net\Dns\TSig\TSigRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsServer.cs" />
+    <Compile Include="App_Code\Net\Dns\EDns\EDnsOptionBase.cs" />
+    <Compile Include="App_Code\Net\Dns\EDns\EDnsOptionType.cs" />
+    <Compile Include="App_Code\Net\Dns\EDns\NsIdOption.cs" />
+    <Compile Include="App_Code\Net\Dns\EDns\OptRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\PtrRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\SoaRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\SpfRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\SrvRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\TxtRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\DnsRecord\UnknownRecord.cs" />
+    <Compile Include="App_Code\Net\Dns\EDns\UnknownOption.cs" />
+    <Compile Include="App_Code\Net\Dns\ExceptionEventArgs.cs" />
+    <Compile Include="App_Code\Net\Dns\OperationCode.cs" />
+    <Compile Include="App_Code\Net\Dns\RecordClass.cs" />
+    <Compile Include="App_Code\Net\Dns\RecordType.cs" />
+    <Compile Include="App_Code\Net\Dns\ReturnCode.cs" />
+    <Compile Include="App_Code\Net\EnumHelper.cs" />
+    <Compile Include="App_Code\Net\Dns\InvalidSignedMessageEventArgs.cs" />
+    <Compile Include="App_Code\Net\IPAddressExtension.cs" />
+    <Compile Include="App_Code\Net\Socket\UdpListener.cs" />
+    <Compile Include="App_Code\Net\Spf\SenderIDScope.cs" />
+    <Compile Include="App_Code\Net\Spf\SenderIDValidator.cs" />
+    <Compile Include="App_Code\Net\Spf\SpfRecordBase.cs" />
+    <Compile Include="App_Code\Net\Spf\SenderIDRecord.cs" />
+    <Compile Include="App_Code\Net\Spf\SpfMechanism.cs" />
+    <Compile Include="App_Code\Net\Spf\SpfMechanismType.cs" />
+    <Compile Include="App_Code\Net\Spf\SpfModifier.cs" />
+    <Compile Include="App_Code\Net\Spf\SpfModifierType.cs" />
+    <Compile Include="App_Code\Net\Spf\SpfQualifier.cs" />
+    <Compile Include="App_Code\Net\Spf\SpfRecord.cs" />
+    <Compile Include="App_Code\Net\Spf\SpfTerm.cs" />
+    <Compile Include="App_Code\Net\Spf\SpfValidator.cs" />
+    <Compile Include="App_Code\Net\Spf\ValidatorBase.cs" />
+    <Compile Include="App_Code\Threading\Task.cs" />
+    <Compile Include="App_Code\Threading\CancellationTokenSource.cs" />
+    <Compile Include="App_Code\Threading\CountdownEvent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\Core\Json.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DnsAgent.cs" />
+    <Compile Include="DnsMessageCache.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rule.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DNSAgent.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DNSAgent.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+  </PropertyGroup>
+</Project>
